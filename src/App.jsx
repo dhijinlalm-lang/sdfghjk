@@ -1,21 +1,22 @@
-import Header from './components/Header';
-import HeroBanner from './components/HeroBanner';
-import Search from './components/Search';
-import Categories from './components/Categories';
-import ItemCards from './components/ItemCards';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import ForgotPassword from './pages/ForgotPassword';
 import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900">
-      <Header />
-      <HeroBanner />
-      <Search />
-      <Categories />
-      <ItemCards />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white dark:bg-slate-900">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
